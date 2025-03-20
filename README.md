@@ -108,8 +108,8 @@ if __name__ == "__main__":
 ```python
 import requests
 
-url = "http://xyz123.ngrok.io/generate"  # Replace with the actual Ngrok URL
-payload = {"prompt": "Generate interview questions based on my resume."}
+url = "https://c12e-34-124-177-134.ngrok-free.app/generate"  # Replace with the actual Ngrok URL
+payload = {"prompt": "Hello"}
 
 response = requests.post(url, json=payload)
 print(response.json()["response"])
