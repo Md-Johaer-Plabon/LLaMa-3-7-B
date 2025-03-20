@@ -41,7 +41,7 @@ Upload the file in colab from google drive:
 import gdown
 
 # Replace the file id with your uploaded file
-# Suppose this is your shared link: https://drive.google.com/file/d/1obx0ZqonvG8xT-SZZWebRW-ZNix1Yd7q/view?usp=sharing
+# Suppose this is your shared link: https://drive.google.com/file/d/1obx0ZlonvG8xT-SZZWKbRW-ZNix1Yd7q/view?usp=drivesdk
 # Then your file id is '1obx0ZqonvG8xT-SZZWebRW-ZNix1Yd7q'
 # The final link will be 'https://drive.google.com/uc?export=download&id={1obx0ZqonvG8xT-SZZWebRW-ZNix1Yd7q}'
 
