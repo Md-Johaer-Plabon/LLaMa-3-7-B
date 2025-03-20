@@ -141,3 +141,41 @@ llama-imatrix		       llama-speculative-simple       test-tokenizer-1-spm
 llama-infill		       llama-tokenize
 llama-llava-cli		       llama-tts
 ```
+```sh
+import subprocess
+from flask import Flask, request, jsonify
+from pyngrok import ngrok
+
+app = Flask(__name__)
+
+# Start the LLaMa server in the background
+llama_server_process = subprocess.Popen(
+    ["/content/llama.cpp/build/bin/llama-server", "-m", "/content/llama-3-7B-Q4_K_M.gguf"],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE
+)
+
+@app.route("/generate", methods=["POST"])
+def generate_response():
+    data = request.json
+    prompt = data.get("prompt", "")
+
+    # Send request to llama-server running in the background
+    response = subprocess.run(
+        ["curl", "-X", "POST", "http://localhost:8080/completion",
+         "-H", "Content-Type: application/json",
+         "-d", f'{{"prompt": "{prompt}"}}'],
+        capture_output=True,
+        text=True
+    )
+
+    return jsonify({"response": response.stdout})
+
+# Expose API using Ngrok
+public_url = ngrok.connect(5000)
+print("Public API URL:", public_url)
+
+if __name__ == "__main__":
+    app.run(port=5000)
+
+```
