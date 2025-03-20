@@ -114,3 +114,30 @@ payload = {"prompt": "Hello"}
 response = requests.post(url, json=payload)
 print(response.json()["response"])
 ```
+
+```sh
+libggml-base.so		       llama-llava-clip-quantize-cli  llama-vdot
+libggml-cpu.so		       llama-lookahead		      test-arg-parser
+libggml.so		       llama-lookup		      test-autorelease
+libllama.so		       llama-lookup-create	      test-backend-ops
+libllava_shared.so	       llama-lookup-merge	      test-barrier
+llama-batched		       llama-lookup-stats	      test-c
+llama-batched-bench	       llama-minicpmv-cli	      test-chat
+llama-bench		       llama-parallel		      test-chat-template
+llama-cli		       llama-passkey		      test-gguf
+llama-convert-llama2c-to-ggml  llama-perplexity		      test-grammar-integration
+llama-cvector-generator        llama-q8dot		      test-grammar-parser
+llama-embedding		       llama-quantize		      test-json-schema-to-grammar
+llama-eval-callback	       llama-quantize-stats	      test-llama-grammar
+llama-export-lora	       llama-qwen2vl-cli	      test-log
+llama-gbnf-validator	       llama-retrieval		      test-model-load-cancel
+llama-gemma3-cli	       llama-run		      test-quantize-fns
+llama-gen-docs		       llama-save-load-state	      test-quantize-perf
+llama-gguf		       llama-server		      test-rope
+llama-gguf-hash		       llama-simple		      test-sampling
+llama-gguf-split	       llama-simple-chat	      test-tokenizer-0
+llama-gritlm		       llama-speculative	      test-tokenizer-1-bpe
+llama-imatrix		       llama-speculative-simple       test-tokenizer-1-spm
+llama-infill		       llama-tokenize
+llama-llava-cli		       llama-tts
+```
