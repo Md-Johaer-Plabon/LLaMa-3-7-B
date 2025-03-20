@@ -78,8 +78,8 @@ def generate_response():
     # Run LLaMA 3 and get response
     result = subprocess.run(
         [
-            "./llama.cpp/build/bin/main", 
-            "-m", MODEL_PATH, 
+            "/content/llama.cpp/build/bin/llama-cli", 
+            "-m", "/content/Meta-Llama-3-7B-29Layers.IQ3_M.gguf", 
             "-p", prompt
         ],
         capture_output=True,
@@ -94,6 +94,7 @@ print("Public API URL:", public_url)
 
 if __name__ == "__main__":
     app.run(port=5000)
+
 
 ```
 
